@@ -66,3 +66,17 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+# TODO: 
+
+### In MyNav
+1. change the links to icons
+2. Add some style to the nav brand
+3. adjust the height
+
+### Colors
+* #006AD7
+* #9AD9EA
+* #21277B
+* #FFFFFF
+* #5F83B1

@@ -1,0 +1,42 @@
+$bg-color: hsl(214, 34, 80);
+$text-color: hsl(214, 34, 35);
+$light-color: hsl(214, 34, 100);
+$shadow-color: hsl(214, 34, 60);
+
+.neomorphism {
+    color: $text-color;
+    background: $bg-color;
+    margin: 4px;
+    border-radius: 2px;
+    cursor: grab;
+    box-shadow: 
+        $bg-color 0px 0px 2px 2px,
+        $shadow-color 4px 4px 8px,
+        $light-color -4px -4px 8px;
+    transition: box-shadow .1s ease;
+    &:hover {
+        box-shadow: 
+            $bg-color 2px 2px 0px 0px,
+            $shadow-color -4px -4px 8px,
+            $light-color 4px 4px 8px;
+    }
+}
+
+.neomorphic-container {
+    animation: surface 3s;
+    perspective: 1000px;
+    transform: rotate3d(1, 0, 0, 30deg);
+    background: $bg-color;
+    padding: 16px;
+    border-radius: 5px;
+    box-shadow: 
+        $bg-color 0px 0px 2px 2px,
+        $shadow-color 12px 12px;
+}
+
+@keyframes surface {
+    0% {
+        opacity: 0;
+        transform: rotate3d(1, 0, 0, 80deg) translate3d(0, 0, -200px);
+    }
+}

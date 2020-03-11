@@ -1,0 +1,40 @@
+$animation-duration: 3s;
+$fade-distance: 20px;
+$deep-blue: #21277B;
+$pale-blue: #9AD9EA;
+
+.diagonal-box {
+    width: 610px;
+    transform: skewY(-8deg);
+    color: $deep-blue;
+}
+.upper-box {
+    animation: fade-in-from-left $animation-duration;
+    background: linear-gradient(to top right, $deep-blue, $pale-blue);
+}
+.lower-box {
+    animation: fade-in-from-right $animation-duration;
+    background: linear-gradient(to top right, $pale-blue, $deep-blue);
+}
+
+@keyframes fade-in-from-left {
+    from {
+        opacity: 0;
+        transform: translateX(-200px);
+    };
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    };
+}
+
+@keyframes fade-in-from-right {
+    from {
+        opacity: 0;
+        transform: translateX(200px);
+    };
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    };
+}

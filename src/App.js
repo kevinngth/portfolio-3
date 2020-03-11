@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import MyNav from "./Components/MyNav/MyNav";
+import MyMain from "./Components/MyMain/MyMain";
+import MySide from "./Components/MySide/MySide";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [page, setPage] = useState("About");
+    return (
+        <Container fluid={true} className="overflow-hidden">
+            <Row>
+                <Col md={10}>
+                    <Row>
+                        <Col className="position-absolute nav-styles">
+                            <MyNav />
+                            <hr />
+                        </Col>
+                    </Row>
+                    <Row className="vh-100">
+                        <Col className="d-flex justify-content-center align-items-center text-monospace text-uppercase">
+                            <MyMain page={page}/>
+                        </Col>
+                    </Row>
+                </Col>
+                <Col className="p-0" md={2}>
+                    <MySide setPage={page => setPage(page)} />
+                </Col>
+            </Row>
+        </Container>
+    );
 }
 
 export default App;
